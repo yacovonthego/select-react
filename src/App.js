@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './normalize.css';
+import GroupControl from './components/GroupControl';
+import { groups } from './data.js';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{width: '300px'}}>
+      <GroupControl
+        values={groups}
+        label={'Группа:'}
+        selected={1}
+      />    
     </div>
   );
 }
